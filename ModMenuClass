@@ -1,0 +1,68 @@
+using System;
+using UnityEngine;
+
+namespace ModMenuClass
+{
+	// Token: 0x02000BF3 RID: 3059
+	public partial class ModMenu : MonoBehaviour
+	{
+		// Token: 0x06005439 RID: 21561 RVA: 0x001981CC File Offset: 0x001963CC
+		public static void DrawMenu()
+		{
+			if (GUI.Button(new Rect(0f, 0f, 100f, 30f), "Open Menu"))
+			{
+				ModMenu.MenuVisible = !ModMenu.MenuVisible;
+			}
+			if (ModMenu.MenuVisible)
+			{
+				GUI.Box(new Rect(100f, 0f, 500f, 400f), ModMenu.MenuLabel);
+				if (GUI.Button(new Rect(100f, 30f, 180f, 30f), ModMenu.Cheat1Label))
+				{
+					ModMenu.Cheat1Active = !ModMenu.Cheat1Active;
+					if (ModMenu.Cheat1Active)
+					{
+						ModMenu.Cheat1Label = "Cheat 1 ON";
+					}
+					else
+					{
+						ModMenu.Cheat1Label = "Cheat 1 OFF";
+					}
+				}
+				if (GUI.Button(new Rect(100f, 60f, 180f, 30f), ModMenu.Cheat2Label))
+				{
+					ModMenu.Cheat2Active = !ModMenu.Cheat2Active;
+					if (ModMenu.Cheat2Active)
+					{
+						ModMenu.Cheat2Label = "Cheat 2 ON";
+					}
+					else
+					{
+						ModMenu.Cheat2Label = "Cheat 2 OFF";
+					}
+				}
+				if (GUI.Button(new Rect(100f, 90f, 180f, 30f), ModMenu.Cheat3Label))
+				{
+					ModMenu.Cheat3Active = !ModMenu.Cheat3Active;
+					if (ModMenu.Cheat3Active)
+					{
+						ModMenu.Cheat3Label = "Cheat 3 ON";
+					}
+					else
+					{
+						ModMenu.Cheat3Label = "Cheat 3 OFF";
+					}
+				}
+				if (GUI.Button(new Rect(100f, 120f, 180f, 30f), ModMenu.Cheat4Label))
+				{
+					ModMenu.Cheat4Active = !ModMenu.Cheat4Active;
+					if (ModMenu.Cheat4Active)
+					{
+						ModMenu.Cheat4Label = "Cheat 4 ON";
+						return;
+					}
+					ModMenu.Cheat4Label = "Cheat 4 OFF";
+				}
+			}
+		}
+	}
+}
